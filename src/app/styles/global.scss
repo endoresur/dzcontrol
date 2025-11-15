@@ -1,0 +1,180 @@
+@use "styles/mixins/index.scss" as *;
+@use "styles/variables/breakpoints.module.scss" as *;
+@use "./colors.scss" as *;
+
+:root {
+  // Root resolution: 1920px;
+  // Root font size: 16px;
+  // 1920 / 100 * x = 16;
+  // x = 0.833
+  font-size: clamp(8px, 0.833vw, 16px);
+  direction: ltr;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: $desktop;
+  min-height: 100vh;
+
+  margin: 0 auto;
+}
+
+html {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+body {
+  scrollbar-gutter: stable;
+
+  word-spacing: 0.1em;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+img {
+  overflow-clip-margin: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+input,
+textarea,
+label,
+button,
+*[role="button"],
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--text-primary) !important;
+
+  -webkit-background-clip: text;
+}
+
+.input-black:-webkit-autofill,
+.input-black:-webkit-autofill:hover,
+.input-black:-webkit-autofill:focus,
+.input-black:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--primary-black) !important;
+
+  -webkit-background-clip: text;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+a {
+  color: var(--blue900);
+  text-decoration: none;
+
+  transition: color 200ms ease;
+}
+
+a:hover {
+  color: var(--blue200);
+}
+
+h1 {
+  font-weight: 900; // black
+}
+
+h2 {
+  font-weight: 700; // heavy
+}
+
+h3 {
+  font-weight: 500; // medium
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.error,
+.success-message {
+  @include small-regular;
+
+  display: block;
+
+  min-height: var(--spacing-x3);
+  margin-block-start: rem(4);
+}
+
+.error {
+  color: var(--error);
+}
+
+.success-message {
+  color: var(--success);
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
