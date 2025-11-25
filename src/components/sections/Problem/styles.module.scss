@@ -73,8 +73,10 @@
         }
       }
 
-      &:hover {
-        scale: 1.1;
+      @include hover {
+        &:hover {
+          scale: 1.1;
+        }
       }
     }
   }
@@ -87,5 +89,16 @@
     text-wrap: balance;
 
     color: var(--text-color);
+  }
+}
+
+@include mobile {
+  .problemRoot {
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0;
+    }
   }
 }

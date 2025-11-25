@@ -56,9 +56,22 @@
         width: rem(70);
       }
 
-      &:hover {
-        scale: 1.1;
+      @include hover {
+        &:hover {
+          scale: 1.1;
+        }
       }
+    }
+  }
+}
+
+@include mobile {
+  .advantagesRoot {
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: rem(20);
     }
   }
 }

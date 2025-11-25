@@ -11,6 +11,7 @@ import Tarifs from "components/sections/Tarifs";
 import WorkFlow from "components/sections/WorkFlow";
 import FAQ from "components/sections/FAQ";
 import Header from "components/ui/Header";
+import Footer from "components/sections/Footer";
 
 const colors = {
   primaryBlue: "#6b76f6",
@@ -43,6 +44,7 @@ function App() {
       <Tarifs bcc={colors.pink} id={sectionsIds.tarifs} />
       <WorkFlow bcc={colors.white} id={sectionsIds.workflow} />
       <FAQ bcc={colors.secodaryBlue} id={sectionsIds.faq} />
+      <Footer bcc={colors.primaryBlue} />
     </>
   );
 }

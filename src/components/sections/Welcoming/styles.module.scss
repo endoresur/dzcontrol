@@ -30,3 +30,25 @@
     justify-self: center;
   }
 }
+
+@include mobile {
+  .welcomingRoot {
+    h1 {
+      font-size: 4rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 3rem;
+      line-height: 1;
+      margin-top: rem(30);
+    }
+    p {
+      font-size: 2rem;
+      line-height: 1.3;
+
+      margin-top: rem(30);
+      width: 100%;
+    }
+  }
+}

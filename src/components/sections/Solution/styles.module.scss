@@ -66,3 +66,26 @@
     }
   }
 }
+
+@include mobile {
+  .solutionRoot {
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+
+      .card {
+        margin-top: rem(20) !important;
+        margin-bottom: 0 !important;
+
+        .title {
+          font-size: 2.3rem;
+        }
+        .description {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

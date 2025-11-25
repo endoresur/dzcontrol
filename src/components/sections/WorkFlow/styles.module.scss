@@ -110,3 +110,32 @@
     margin-top: rem(60);
   }
 }
+
+@include mobile {
+  .workFlowRoot {
+    .content {
+      .flowItem {
+        gap: rem(10);
+
+        .progress {
+          .progressNumber {
+            width: rem(40);
+            height: rem(40);
+
+            font-size: 1.5rem;
+          }
+        }
+
+        .flowInfo {
+          .block {
+            .blockDescription {
+              margin-left: var(--spacing-x4);
+              margin-bottom: var(--spacing-base);
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

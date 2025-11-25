@@ -17,21 +17,21 @@ const Solution = ({ bcc, className }: Props) => {
         </h3>
 
         <div className={styles.content}>
-          <article className={cc(styles.card, styles.card1)}>
+          <article className={styles.card}>
             <p className={styles.title}>Заявка </p>
             <p className={styles.description}>
               Вы оставляете заявку, и мы подбираем персонального куратора
             </p>
           </article>
 
-          <article className={cc(styles.card, styles.card2)}>
+          <article className={styles.card}>
             <p className={styles.title}>Знакомство </p>
             <p className={styles.description}>
               Бесплатный вводный звонок куратора с вами и ребенком
             </p>
           </article>
 
-          <article className={cc(styles.card, styles.card3)}>
+          <article className={styles.card}>
             <p className={styles.title}>Отчет </p>
             <p className={styles.description}>
               Вы получаете четкий отчет о том, что сделано и с каким результатом

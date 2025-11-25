@@ -1,0 +1,98 @@
+@use "styles/mixins" as *;
+
+.footerRoot {
+  @include container;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(60);
+
+  padding-top: rem(40);
+  padding-bottom: rem(50);
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+
+    .logoWrapper {
+      height: rem(180);
+      width: rem(180);
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .slogan {
+      color: #ffebfe;
+      font-size: 2rem;
+      font-weight: 700;
+      white-space: pre-wrap;
+      text-align: left;
+      text-wrap: balance;
+    }
+  }
+
+  .contacts {
+    .contactsTitle {
+      color: #ffebfe;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact {
+      color: #ffebfe;
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      margin-left: rem(60);
+      cursor: pointer;
+      transition: color 200ms ease;
+
+      @include hover {
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .copyrights {
+    color: #ffebfe;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+@include mobile {
+  .footerRoot {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      .logoWrapper {
+        height: rem(200);
+        width: rem(200);
+      }
+
+      .slogan {
+        font-size: 2.5rem;
+      }
+    }
+
+    .contacts {
+      .contactsTitle {
+        font-size: 2rem;
+      }
+      .contact {
+        font-size: 2rem;
+        margin-left: 0;
+      }
+    }
+
+    .copyrights {
+      font-size: 2rem;
+    }
+  }
+}

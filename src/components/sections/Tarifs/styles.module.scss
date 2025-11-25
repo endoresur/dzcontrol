@@ -67,7 +67,6 @@
       background-color: #fcfcfc;
       border-radius: var(--m-rounding);
       overflow: hidden;
-
       box-shadow: var(--modal-shadow);
 
       padding: var(--spacing-x7) var(--spacing-base) var(--spacing-x5);
@@ -122,6 +121,32 @@
       .title,
       .button {
         background-color: #db73ac;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .tarifsRoot {
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: rem(80);
+
+      .card {
+        .period {
+          font-size: 1.5rem;
+        }
+
+        .description {
+          font-size: 2rem;
+        }
+
+        .list {
+          .listItem {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }

@@ -21,7 +21,9 @@
     }
 
     .chevron {
+      min-width: rem(40);
       width: rem(40);
+      min-height: rem(40);
       height: rem(40);
 
       transition: transform 0.25s ease;
@@ -46,6 +48,22 @@
       font-weight: 500;
       padding: 0 var(--spacing-x3) var(--spacing-x2);
       text-wrap: balance;
+    }
+  }
+}
+
+@include mobile {
+  .collapseBlockRoot {
+    .summary {
+      .summaryText {
+        font-size: 2.2rem;
+      }
+    }
+
+    .content {
+      .inner {
+        font-size: 1.8rem;
+      }
     }
   }
 }
