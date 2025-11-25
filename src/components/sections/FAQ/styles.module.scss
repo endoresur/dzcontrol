@@ -1,0 +1,20 @@
+@use "styles/mixins" as *;
+
+.faqRoot {
+  @include container;
+  padding-top: rem(45);
+  padding-bottom: rem(45);
+
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .content {
+    margin-top: rem(60);
+
+    .collapse {
+      margin-top: rem(20);
+    }
+  }
+}

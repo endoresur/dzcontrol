@@ -1,0 +1,51 @@
+@use "styles/mixins" as *;
+
+.collapseBlockRoot {
+  width: 100%;
+  border-radius: var(--s-rounding);
+
+  background-color: #fff;
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    padding: var(--spacing-x2) var(--spacing-x3);
+
+    .summaryText {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .chevron {
+      width: rem(40);
+      height: rem(40);
+
+      transition: transform 0.25s ease;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .chevronOpen {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .content {
+    overflow: hidden;
+    transition: height 200ms ease;
+
+    .inner {
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 0 var(--spacing-x3) var(--spacing-x2);
+      text-wrap: balance;
+    }
+  }
+}

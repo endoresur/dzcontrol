@@ -1,0 +1,112 @@
+@use "styles/mixins" as *;
+
+.workFlowRoot {
+  @include container;
+
+  padding-top: rem(70);
+  padding-bottom: rem(70);
+
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--text-color);
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-style: italic;
+    color: var(--text-color);
+  }
+
+  .content {
+    margin-top: rem(60);
+    .flowItem {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: rem(30);
+
+      margin-bottom: var(--spacing-x3);
+
+      .progress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(20);
+
+        .progressNumber {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-size: 2rem;
+          line-height: 1;
+          font-weight: 800;
+          color: #6b76f6;
+
+          width: rem(60);
+          height: rem(60);
+
+          border: rem(3) solid rgba(223, 226, 255, 0.71);
+          border-radius: 50%;
+        }
+        .progressLine {
+          background-color: rgba(223, 226, 255, 0.71);
+          height: 100%;
+          width: rem(3);
+        }
+      }
+
+      .flowInfo {
+        overflow: hidden;
+        padding-bottom: var(--spacing-x2);
+        border: rem(5) solid rgba(223, 226, 255, 0.71);
+        border-radius: var(--m-rounding);
+
+        .title {
+          font-size: 2rem;
+          line-height: 1;
+
+          color: var(--text-color);
+          background-color: rgba(223, 226, 255, 0.71);
+
+          padding: var(--spacing-x2);
+        }
+
+        .block {
+          padding: var(--spacing-x2);
+          padding-bottom: 0;
+          .blockTitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-base);
+          }
+
+          .blockDescription {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+
+            margin-left: var(--spacing-x7);
+            margin-bottom: var(--spacing-base);
+
+            &::before {
+              content: "—";
+              color: var(--text-color);
+              margin-right: var(--spacing-base);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-wrap: balance;
+    text-align: center;
+    margin-top: rem(60);
+  }
+}

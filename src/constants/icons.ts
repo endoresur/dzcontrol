@@ -1,5 +1,5 @@
-import Mock from "../../public/mock.svg";
+import Logo from "../../public/logo.svg";
 
 export const icons = {
-  mock: Mock,
+  logo: Logo,
 };

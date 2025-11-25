@@ -1,0 +1,68 @@
+@use "styles/mixins" as *;
+
+.solutionRoot {
+  @include container;
+
+  padding-top: rem(45);
+  padding-bottom: rem(45);
+
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    text-align: end;
+    color: var(--text-color);
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: end;
+    font-style: italic;
+    color: var(--text-color);
+  }
+
+  .content {
+    margin-top: rem(50);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(80);
+
+    .card {
+      border-radius: var(--m-rounding);
+      margin-bottom: rem(20);
+      overflow: hidden;
+      height: fit-content;
+
+      background-color: #faeaf9;
+
+      width: fit-content;
+
+      .title {
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        text-align: center;
+        color: var(--text-color);
+
+        padding: var(--spacing-x2) 0 var(--spacing-base);
+      }
+      .description {
+        font-size: 1.5rem;
+        padding: var(--spacing-base) var(--spacing-x3) var(--spacing-x2);
+        text-align: center;
+        text-wrap: balance;
+        font-weight: 500;
+      }
+    }
+
+    .card:nth-child(2) {
+      margin-top: rem(70);
+    }
+
+    .card:nth-child(3) {
+      margin-top: rem(140);
+    }
+  }
+}

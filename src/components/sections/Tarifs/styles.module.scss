@@ -1,0 +1,128 @@
+@use "styles/mixins" as *;
+
+.tarifsRoot {
+  @include container;
+
+  padding-top: rem(60);
+  padding-bottom: rem(80);
+
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(50);
+    margin-top: rem(70);
+
+    .cardWrapper {
+      position: relative;
+
+      .title {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        background-color: #6b76f6;
+        color: #fcfcfc;
+
+        padding: var(--spacing-base) var(--spacing-x5);
+        border-radius: var(--l-rounding);
+      }
+
+      .button {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 2rem;
+        line-height: 1.2;
+        width: max-content;
+
+        text-transform: uppercase;
+        background-color: #6b76f6;
+        color: #fcfcfc;
+
+        text-align: center;
+        padding: var(--spacing-base) var(--spacing-x4);
+        border-radius: var(--xs-rounding);
+      }
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      background-color: #fcfcfc;
+      border-radius: var(--m-rounding);
+      overflow: hidden;
+
+      box-shadow: var(--modal-shadow);
+
+      padding: var(--spacing-x7) var(--spacing-base) var(--spacing-x5);
+
+      .price {
+        text-align: center;
+
+        color: #6b76f6;
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .period {
+        text-align: center;
+
+        color: #6b76f6;
+        font-size: 1.3rem;
+        line-height: 1;
+        font-weight: 600;
+      }
+
+      .description {
+        margin: var(--spacing-x3) 0 var(--spacing-x3);
+
+        text-align: center;
+        text-wrap: balance;
+        font-size: 1.7rem;
+        line-height: 1.2;
+        font-weight: 700;
+
+        color: var(--text-color);
+      }
+
+      .list {
+        padding: 0 var(--spacing-x3);
+
+        .listItem {
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 500;
+          color: var(--text-color);
+
+          margin-bottom: var(--spacing-x3);
+          padding-bottom: rem(4);
+          border-bottom: rem(2) solid #f1f1f1;
+        }
+      }
+    }
+
+    .cardWrapper:nth-child(2) {
+      .title,
+      .button {
+        background-color: #db73ac;
+      }
+    }
+  }
+}

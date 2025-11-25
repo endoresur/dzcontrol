@@ -1,0 +1,91 @@
+@use "styles/mixins" as *;
+
+.problemRoot {
+  @include container;
+  padding-top: rem(45);
+  padding-bottom: rem(45);
+
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--text-color);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, rem(700));
+    justify-items: center;
+    justify-self: center;
+
+    margin: rem(60) auto;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding: var(--spacing-x3);
+      border-radius: var(--m-rounding);
+
+      transition: scale 200ms ease;
+
+      .infoWrapper {
+        background-color: #fff;
+        height: fit-content;
+
+        padding: var(--spacing-x3);
+        margin-bottom: minus-rem(20);
+        border-radius: var(--xl-rounding);
+        z-index: 1;
+
+        .title {
+          font-size: 2rem;
+          line-height: 1.2;
+          text-align: center;
+          color: var(--text-color);
+          font-weight: 600;
+          text-wrap: balance;
+        }
+
+        .description {
+          font-size: 1.5rem;
+          text-align: center;
+          text-wrap: balance;
+          font-weight: 500;
+        }
+      }
+
+      .imageWrapper {
+        border-radius: var(--m-rounding);
+        overflow: hidden;
+
+        min-height: rem(400);
+        height: rem(400);
+        min-width: rem(400);
+        width: rem(400);
+
+        .image {
+          height: 100%;
+          width: 100%;
+
+          object-fit: cover;
+        }
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+
+  .solve {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    text-wrap: balance;
+
+    color: var(--text-color);
+  }
+}

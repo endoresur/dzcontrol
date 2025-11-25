@@ -1,7 +1,10 @@
 import { cc } from "utils/combineClasses";
 import styles from "./styles.module.scss";
+import CollapseBlock from "components/ui/CollapseBlock";
 
 interface Props {
+  id: string;
+  bcc: string;
   className?: string;
 }
 
@@ -56,19 +59,23 @@ const questions: Question[] = [
   },
 ];
 
-const FAQ = ({ className }: Props) => {
+const FAQ = ({ id, bcc, className }: Props) => {
   return (
-    <div className={cc(styles.faqRoot, className)}>
-      <h2>Частые вопросы (FAQ)</h2>
-      <div>
-        {questions.map((item) => (
-          <div>
-            <p>{item.title}</p>
-            <p>{item.description}</p>
-          </div>
-        ))}
+    <section style={{ backgroundColor: bcc, scrollMargin: 50 }} id={id}>
+      <div className={cc(styles.faqRoot, className)}>
+        <h2>Частые вопросы (FAQ)</h2>
+
+        <div className={styles.content}>
+          {questions.map((item) => (
+            <CollapseBlock
+              summary={item.title}
+              children={item.description}
+              className={styles.collapse}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
